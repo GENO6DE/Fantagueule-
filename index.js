@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const cfg require('./index.json'); // a garder en version desktop
 const token = process.env.token // a garder en version heroku
-const prefix = ("?");
+const prefix = ("ta");
 
 bot.on('ready', function () {
     console.log("Je suis prêt à être utilisé.")
@@ -33,12 +32,10 @@ bot.on('message', msg => {
     if (msg.content.match(/salut/i)) {
             msg.reply('Je suis d\'accord avec toi.')
     }
-    if (msg.content === prefix + "site"){
-        msg.channel.send("https://alexpgm.000webhostapp.com/")
-        console.log("Une personne a demandé pour aller sur ton site.")
+    if (msg.content === prefix + "gueule"){
+        msg.channel.send("oui enfin ta gueuuuule!/")
     }
 
 });
 
-bot.login(cfg.token); //a garder en version desktop
 bot.login(token); //a garder en version heroku
